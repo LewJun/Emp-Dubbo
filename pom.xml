@@ -74,7 +74,11 @@
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-registry-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
             <!--解决java.lang.NoClassDefFoundError: io/netty/channel/EventLoopGroup-->
             <dependency>
                 <groupId>io.netty</groupId>
