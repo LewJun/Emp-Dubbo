@@ -18,6 +18,10 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!--广播方式-->
     <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+
     <!-- 生成远程服务代理，可以像使用本地bean一样使用empService -->
-    <dubbo:reference interface="com.example.lewjun.service.EmpService" id="empService"/>
+    <!--<dubbo:reference interface="com.example.lewjun.service.EmpService" id="empService"/>-->
+
+    <!-- dubbo使用注解dubbo:annotation方式配置要访问的服务，相关service需要使用注解@Reference -->
+    <dubbo:annotation package="com.example.lewjun.controller"/>
 </beans>
