@@ -71,6 +71,16 @@
             <version>${commons-logging.version}</version>
         </dependency>
         <!-- log end -->
+
+        <!--加入junit和spring-test的依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
