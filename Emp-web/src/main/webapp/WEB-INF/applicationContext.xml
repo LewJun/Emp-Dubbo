@@ -3,5 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    基于xml的方式配置，分开配置文件后，注意引用顺序，dubbo要优先于web，否则会出现找不到提供者的错误信息
+    因为在controller中会去扫描需要注入的对象
+    -->
+    <import resource="classpath*:spring-dubbo.xml"/>
     <import resource="classpath*:spring-web.xml"/>
 </beans>

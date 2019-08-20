@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
-        http://code.alibabatech.com/schema/dubbo
-        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!-- 当前应用名称（是注册中心识别的名称） -->
-    <dubbo:application name="Emp-web">
-        <!--Dubbo启动时qos-server can not bind localhost:22222错误解决，provider已经使用了22222-->
-        <dubbo:parameter key="qos.enable" value="true"/>
-        <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
-        <dubbo:parameter key="qos.port" value="33333"/>
-    </dubbo:application>
-    <!-- 注册中心地址（zookeeper） -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182"/>
-    <!--广播方式-->
-    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- SpringMVC的基本控制器 -->
     <mvc:annotation-driven/>
@@ -34,6 +21,4 @@
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <!-- 生成远程服务代理，可以像使用本地bean一样使用empService -->
-    <dubbo:reference interface="com.example.lewjun.service.EmpService" id="empService"/>
 </beans>

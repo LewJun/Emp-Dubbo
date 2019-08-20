@@ -12,7 +12,7 @@
     <!-- 当前应用名称（是注册中心识别的名称） -->
     <dubbo:application name="Emp-service"/>
     <!-- 注册中心地址（zookeeper） -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!--广播方式-->
     <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
 
