@@ -26,4 +26,12 @@ public class Emp extends BasePO implements Serializable {
     public void setEname(String ename) {
         this.ename = ename;
     }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "empno=" + empno +
+                ", ename='" + ename + '\'' +
+                '}';
+    }
 }
