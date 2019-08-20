@@ -1,8 +1,9 @@
 package com.example.lewjun.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.example.lewjun.bean.po.Emp;
-import com.example.lewjun.service.EmpService;
 import com.example.lewjun.mapper.EmpMapper;
+import com.example.lewjun.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * @author LewJun
  */
+@Service
 public class EmpServiceImpl implements EmpService {
     @Autowired
     private EmpMapper empMapper;
