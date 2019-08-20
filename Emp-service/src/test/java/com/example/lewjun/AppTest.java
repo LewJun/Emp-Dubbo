@@ -14,6 +14,6 @@ public class AppTest extends SpringJunitTest {
 
     @Test
     public void test1() {
-        LOGGER.info(empService.toString());
+        LOGGER.info("【empList:{}】", empService.findAll());
     }
 }
