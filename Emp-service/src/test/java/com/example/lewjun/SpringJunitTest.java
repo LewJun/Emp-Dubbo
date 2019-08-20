@@ -12,7 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 // 配置了@ContextConfiguration注解并使用该注解的locations属性指明spring和配置文件之后，
-@ContextConfiguration(locations = {"classpath:spring/beans-*.xml"})
+// 因为是引用的不同几个模块，所以这里使用classpath*
+@ContextConfiguration(locations = {"classpath*:spring/spring-*.xml"})
 public class SpringJunitTest {
     static final Logger LOGGER = LoggerFactory.getLogger(SpringJunitTest.class);
 }
