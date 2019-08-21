@@ -14,6 +14,7 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+        <!--Emp相关 { -->
         <dependency>
             <groupId>com.example.lewjun</groupId>
             <artifactId>Emp-interface</artifactId>
@@ -23,7 +24,9 @@
             <groupId>com.example.lewjun</groupId>
             <artifactId>Emp-dao</artifactId>
         </dependency>
+        <!--Emp相关 } -->
 
+        <!--spring相关配置 { -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -46,7 +49,9 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
-        <!-- dubbo相关 -->
+        <!--spring相关配置 } -->
+
+        <!-- dubbo相关 { -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -63,6 +68,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-registry-zookeeper</artifactId>
         </dependency>
+        <!-- dubbo相关 } -->
 
         <!--slf4j start-->
         <dependency>
