@@ -38,9 +38,30 @@
         <mysql.version>5.1.37</mysql.version>
         <HikariCP.version>3.3.1</HikariCP.version>
         <!--dao中需要的依赖配置 } -->
+
+        <!--将Emp相关依赖 { -->
+        <Emp-pojo.version>1.0-SNAPSHOT</Emp-pojo.version>
+        <Emp-dao.version>1.0-SNAPSHOT</Emp-dao.version>
+        <Emp-interface.version>1.0-SNAPSHOT</Emp-interface.version>
+        <!--将Emp相关依赖 } -->
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.example.lewjun</groupId>
+                <artifactId>Emp-pojo</artifactId>
+                <version>${Emp-pojo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.lewjun</groupId>
+                <artifactId>Emp-dao</artifactId>
+                <version>${Emp-dao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.lewjun</groupId>
+                <artifactId>Emp-interface</artifactId>
+                <version>${Emp-interface.version}</version>
+            </dependency>
             <!--spring相关依赖-->
             <dependency>
                 <groupId>org.springframework</groupId>
