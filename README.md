@@ -100,12 +100,12 @@ server.2=127.0.0.1:2882:3882
     - 运行命令 **java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20880 ./d1/Emp-service-1.0-SNAPSHOT.jar**
     - 运行命令 **java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20881 ./d2/Emp-service-1.0-SNAPSHOT.jar**
     - 22222被占用 可以通过添加参数 **-Ddubbo.application.qos.accept.foreign.ip=false -Ddubbo.application.qos.port=22223 -Ddubbo.application.qos.enable=true** 来解决
-
-完整命令
-```config
-java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20883 -Ddubbo.application.qos.accept.foreign.ip=false -Ddubbo.application.qos.port=22223 -Ddubbo.application.qos.enable=true Emp-service-1.0-SNAPSHOT.jar
-java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20884 -Ddubbo.application.qos.accept.foreign.ip=false -Ddubbo.application.qos.port=22224 -Ddubbo.application.qos.enable=true Emp-service-1.0-SNAPSHOT.jar
-```
+    - 完整命令
+    > java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20883 -Ddubbo.application.qos.accept.foreign.ip=false -Ddubbo.application.qos.port=22223 -Ddubbo.application.qos.enable=true Emp-service-1.0-SNAPSHOT.jar
+    
+    > java -jar -Ddubbo.protocol.name=dubbo -Ddubbo.protocol.port=20884 -Ddubbo.application.qos.accept.foreign.ip=false -Ddubbo.application.qos.port=22224 -Ddubbo.application.qos.enable=true Emp-service-1.0-SNAPSHOT.jar
+    
+    - 测试：多个提供者一起运行，关闭任何一个对服务消费者都没有影响，除非。。。。。。。全部关闭后，服务消费者才会报错找不到服务提供者。
 
 * 方式2
 > 修改spring-service.xml中的port参数为其他的
