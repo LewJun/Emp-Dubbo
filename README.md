@@ -78,6 +78,14 @@ server.1=127.0.0.1:2881:3881
 server.2=127.0.0.1:2882:3882
 ```
 
+> 启动zk
+    * ./bin/zkServer.cmd
+> 注意：zk的部署个数最好为奇数，ZK集群的机制是只要超过半数的节点OK，集群就能正常提供服务。只有ZK节点挂得太多，只剩一半或不到一半节点能工作，集群才失效。
+
+> 查看zk启动状态
+    * ./bin/zkServer.cmd status
+
+> 启动Emp-service 和Emp-web，curl http://localhost:9002/emp/index 可以正常访问，此时当关闭任何一个zk，或者全部关闭zk，都是可以访问的，因为服务已经被发现，两个应用是直连的方式。
 > dubbo配置
 ```xml
 <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
