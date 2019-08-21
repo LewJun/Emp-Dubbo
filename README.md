@@ -39,3 +39,46 @@ dataDir=../tmp/data/
 dataLogDir=../log/
 admin.serverPort=8080
 ```
+
+
+## zookeeper 集群配置
+* [参考](https://www.cnblogs.com/likemebee/p/7891300.html)
+> 将zookeeper复制成为2份 zk1和zk2
+> 在主目录下建立tmp/data 和tmp/log目录，并在temp/data目录下建立myid文件，写入不同的数字，例如1，2
+> 配置conf/zoo.cfg文件
+
+```config
+tickTime=2000
+initLimit=10
+syncLimit=5
+# 使用绝对路径
+dataDir=D:/Program Files/zk1/tmp/data
+# 使用绝对路径
+logDir=D:/Program Files/zk1/tmp/log
+admin.serverPort=8080
+clientPort=2181
+
+server.1=127.0.0.1:2881:3881
+server.2=127.0.0.1:2882:3882
+```
+
+
+```config
+tickTime=2000
+initLimit=10
+syncLimit=5
+# 使用绝对路径
+dataDir=D:/Program Files/zk2/tmp/data
+# 使用绝对路径
+logDir=D:/Program Files/zk2/tmp/log
+admin.serverPort=8081
+clientPort=2182
+
+server.1=127.0.0.1:2881:3881
+server.2=127.0.0.1:2882:3882
+```
+
+> dubbo配置
+```xml
+<dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
+```
