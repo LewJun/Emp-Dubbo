@@ -17,22 +17,22 @@
     <th>Opr</th>
   </tr>
   </thead>
+<#-- 判断empList是否为空 -->
+<#if empList??>
   <tbody>
-  <#-- 判断empList是否为空 -->
-  <#if empList??>
   <#-- 循环输出emp信息 -->
-      <#list empList as emp>
-    <tr>
-      <td>${emp.empno}</td>
-      <td>${emp.ename}</td>
-      <td>
-        <a href="javascript:void(0)" class="emp-del">Del</a>
-        <a href="javascript:void(0)" class="emp-edit">Edit</a>
-      </td>
-    </tr>
-      </#list>
-  </#if>
+<#list empList as emp>
+<tr>
+  <td>${emp.empno}</td>
+  <td>${emp.ename}</td>
+  <td>
+    <a href="javascript:void(0)" class="emp-del">Del</a>
+    <a href="javascript:void(0)" class="emp-edit">Edit</a>
+  </td>
+</tr>
+</#list>
   </tbody>
+</#if>
 </table>
 </body>
 </html>

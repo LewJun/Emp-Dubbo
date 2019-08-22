@@ -19,8 +19,8 @@
     <th>Opr</th>
   </tr>
   </thead>
-  <tbody>
   <c:if test="${empList != null}">
+    <tbody>
     <c:forEach items="${empList}" var="emp">
       <tr>
         <td>${emp.empno}</td>
@@ -31,8 +31,8 @@
         </td>
       </tr>
     </c:forEach>
+    </tbody>
   </c:if>
-  </tbody>
 </table>
 </body>
 </html>
