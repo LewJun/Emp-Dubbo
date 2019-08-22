@@ -71,6 +71,19 @@
             <artifactId>jstl</artifactId>
         </dependency>
         <!--配置servlet 和 jstl 结束-->
+
+        <!--freemarker-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+        <!--
+        Spring4 MVC 配置 Freemarker视图添加 templateLoaderPath 时报错，需要添加spring-context-support依赖
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
