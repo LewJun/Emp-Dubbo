@@ -8,15 +8,18 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Emp</title>
+</head>
 <body>
 <h2>Emp manager!</h2>
 <table>
-  <tbody>
+  <thead>
   <tr>
     <th>Empno</th>
     <th>Ename</th>
     <th>Opr</th>
   </tr>
+  </thead>
+  <tbody>
   <c:if test="${empList != null}">
     <c:forEach items="${empList}" var="emp">
       <tr>
