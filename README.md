@@ -117,3 +117,71 @@ server.2=127.0.0.1:2882:3882
 ## Dubbo Admin管理控制台
 将dubbo-admin-2.5.3.war部署到配置jdk7的tomcat下，启动tomcat，访问localhost:7777/dubbo-admin-2.5.3 输入用户名和密码root即可进入
 
+## Emp-web 服务消费者集群
+* 环境：win10_x64 jdk8
+* 查看nginx 版本 `nginx -V` => nginx/1.12.2
+```config
+>>> nginx -h
+nginx version: nginx/1.12.2
+Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         : this help
+  -v            : show version and exit
+  -V            : show version and configure options then exit
+  -t            : test configuration and exit
+  -T            : test configuration, dump it and exit
+  -q            : suppress non-error messages during configuration testing
+  -s signal     : send signal to a master process: stop, quit, reopen, reload
+  -p prefix     : set prefix path (default: NONE)
+  -c filename   : set configuration file (default: conf/nginx.conf)
+  -g directives : set global directives out of configuration file
+```
+* 启动 `nginx`
+* 关闭 `nginx -s stop`
+* 动态代理配置
+> 当访问 http://localhost/ 的时候反向代理到proxy_pass指定的路径
+```config
+    server {
+        listen       80;
+        server_name  localhost;                      ① <-----------------
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+#            root   html;
+#            index  index.html index.htm;
+#            当访问 http://localhost/ 的时候反向代理到proxy_pass指定的路径
+            proxy_pass http://www.baidu.com;         ② <-----------------
+        }
+```
+
+* 配置 C:\Windows\System32\drivers\etc\hosts
+> 加入配置 `127.0.0.1 lewjun.example.com` 此时访问lewjun.example.com 等价于 127.0.0.1
+
+* 配置负载均衡
+> 当访问lewjun.example.com时负载均衡到tomcat_emp_web指定的路径
+```config
+
+    upstream tomcat_emp_web {                        ① <-----------------
+        server 127.0.0.1:9000 weight=3;
+        server 127.0.0.1:9001 weight=3;
+        server 127.0.0.1:9002;
+    }
+
+    server {
+        listen       80;
+        server_name  lewjun.example.com;             ② <-----------------
+        #charset koi8-r;
+        #access_log  logs/host.access.log  main;
+        location / {
+            proxy_pass   http://tomcat_emp_web;      ③ <-----------------
+            index  index.html index.htm;
+        }
+    }
+```
+
+> weight是指权重的意思
+
