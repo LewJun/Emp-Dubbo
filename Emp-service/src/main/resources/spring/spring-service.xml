@@ -12,9 +12,9 @@
     <!-- 当前应用名称（是注册中心识别的名称） -->
     <dubbo:application name="Emp-service"/>
     <!-- 注册中心地址（zookeeper） -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>-->
     <!--广播方式-->
-    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+    <dubbo:registry address="multicast://224.5.6.7:1234"/>
 
     <!-- 和本地bean一样实现服务 -->
     <!--<bean id="empService" class="com.example.lewjun.service.impl.EmpServiceImpl"/>-->

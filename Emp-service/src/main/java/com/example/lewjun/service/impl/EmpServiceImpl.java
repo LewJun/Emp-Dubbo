@@ -1,7 +1,7 @@
 package com.example.lewjun.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.example.lewjun.bean.po.Emp;
+import com.example.lewjun.dto.EmpDTO;
 import com.example.lewjun.mapper.EmpMapper;
 import com.example.lewjun.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class EmpServiceImpl implements EmpService {
     private EmpMapper empMapper;
 
     @Override
-    public int save(Emp emp) {
+    public int save(EmpDTO emp) {
         return empMapper.save(emp);
     }
 
@@ -28,17 +28,17 @@ public class EmpServiceImpl implements EmpService {
     }
 
     @Override
-    public int update(Emp emp) {
+    public int update(EmpDTO emp) {
         return empMapper.update(emp);
     }
 
     @Override
-    public List<Emp> findAll() {
+    public List<EmpDTO> findAll() {
         return empMapper.findAll();
     }
 
     @Override
-    public Emp findByPk(Serializable pk) {
+    public EmpDTO findByPk(Serializable pk) {
         return empMapper.findByPk(pk);
     }
 }
