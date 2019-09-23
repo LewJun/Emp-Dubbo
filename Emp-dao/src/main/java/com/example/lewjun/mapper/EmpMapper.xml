@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.lewjun.mapper.EmpMapper">
-    <insert id="save" parameterType="com.example.lewjun.bean.po.Emp">
+    <insert id="save" parameterType="com.example.lewjun.dto.EmpDTO">
         insert into emp (empno, ename)
         values (#{empno}, #{ename})
     </insert>
@@ -15,11 +15,11 @@
         from emp
         where empno = #{empno}
     </delete>
-    <select id="findAll" resultType="com.example.lewjun.bean.po.Emp">
+    <select id="findAll" resultType="com.example.lewjun.dto.EmpDTO">
         select *
         from emp
     </select>
-    <select id="findByPk" resultType="com.example.lewjun.bean.po.Emp">
+    <select id="findByPk" resultType="com.example.lewjun.dto.EmpDTO">
         select *
         from emp
         where empno = #{empno}
