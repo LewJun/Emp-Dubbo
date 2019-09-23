@@ -1,18 +1,18 @@
 package com.example.lewjun.service;
 
-import com.example.lewjun.bean.po.Emp;
+import com.example.lewjun.dto.EmpDTO;
 
 import java.io.Serializable;
 import java.util.List;
 
 public interface EmpService {
-    int save(Emp emp);
+    int save(EmpDTO emp);
 
     int del(Serializable pk);
 
-    int update(Emp emp);
+    int update(EmpDTO emp);
 
-    List<Emp> findAll();
+    List<EmpDTO> findAll();
 
-    Emp findByPk(Serializable pk);
+    EmpDTO findByPk(Serializable pk);
 }

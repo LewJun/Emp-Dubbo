@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.example.lewjun</groupId>
-            <artifactId>Emp-pojo</artifactId>
+            <artifactId>Emp-dto</artifactId>
         </dependency>
     </dependencies>
 </project>
