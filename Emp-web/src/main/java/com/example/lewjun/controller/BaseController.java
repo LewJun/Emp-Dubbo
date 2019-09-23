@@ -1,8 +1,7 @@
 package com.example.lewjun.controller;
 
 import com.example.lewjun.utils.ModelAndViewUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -12,8 +11,8 @@ import java.util.Map;
  *
  * @author LewJun
  */
+@Slf4j
 public class BaseController {
-    static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     /**
      * 渲染页面并返回数据

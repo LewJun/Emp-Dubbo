@@ -18,9 +18,9 @@
         <dubbo:parameter key="qos.port" value="33333"/>
     </dubbo:application>
     <!-- 注册中心地址（zookeeper） -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>-->
     <!--广播方式-->
-    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+    <dubbo:registry address="multicast://224.5.6.7:1234"/>
 
     <!-- 生成远程服务代理，可以像使用本地bean一样使用empService -->
     <!--<dubbo:reference interface="com.example.lewjun.service.EmpService" id="empService"/>-->
