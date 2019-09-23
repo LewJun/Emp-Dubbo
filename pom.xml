@@ -6,7 +6,8 @@
     <artifactId>Emp-Dubbo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Emp-pojo</module>
+        <module>Emp-vo</module>
+        <module>Emp-dto</module>
         <module>Emp-interface</module>
         <module>Emp-service</module>
         <module>Emp-dao</module>
@@ -21,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.version>5.1.5.RELEASE</spring.version>
         <dubbo.version>2.6.5</dubbo.version>
         <alibaba.spring-context-support>1.0.2</alibaba.spring-context-support>
         <netty.version>4.1.34.Final</netty.version>
@@ -41,7 +42,8 @@
         <!--dao中需要的依赖配置 } -->
 
         <!--将Emp相关依赖 { -->
-        <Emp-pojo.version>1.0-SNAPSHOT</Emp-pojo.version>
+        <Emp-vo.version>1.0-SNAPSHOT</Emp-vo.version>
+        <Emp-dto.version>1.0-SNAPSHOT</Emp-dto.version>
         <Emp-dao.version>1.0-SNAPSHOT</Emp-dao.version>
         <Emp-interface.version>1.0-SNAPSHOT</Emp-interface.version>
         <!--将Emp相关依赖 } -->
@@ -50,8 +52,14 @@
         <dependencies>
             <dependency>
                 <groupId>com.example.lewjun</groupId>
-                <artifactId>Emp-pojo</artifactId>
-                <version>${Emp-pojo.version}</version>
+                <artifactId>Emp-vo</artifactId>
+                <version>${Emp-vo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.example.lewjun</groupId>
+                <artifactId>Emp-dto</artifactId>
+                <version>${Emp-dto.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.example.lewjun</groupId>
@@ -259,6 +267,12 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
 
