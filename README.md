@@ -185,3 +185,8 @@ Options:
 
 > weight是指权重的意思
 
+## 问题
+* Dubbo的广播模式下Can't assign requested address问题解决
+  - -Djava.net.preferIPv4Stack=true
+  - mvn tomcat7:run -Djava.net.preferIPv4Stack=true
+
